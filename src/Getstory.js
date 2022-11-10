@@ -1,7 +1,6 @@
 import React,{useState}from "react";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Modal from './Modals/Modal'; 
-
 import styled from "styled-components"; 
 import{CiMicrophoneOn} from "react-icons/ci"
 import Button from '@mui/material/Button'
