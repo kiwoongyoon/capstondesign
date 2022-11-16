@@ -69,7 +69,17 @@ function Speechmodal(){
     </React.Fragment>
   );
 }
-const Getstory =(props)=>{    
+
+// function Textareachange=(event)=>(); 
+
+
+
+
+
+
+
+//////////////////////////메인 사이트 ////////////////////////////////
+const Gettext =(props)=>{    
   const[listen, setListen]=useState(false) ;
   const {
     transcript,
@@ -77,26 +87,20 @@ const Getstory =(props)=>{
     resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
-
+  
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
     return(
     <>
       <Newheader></Newheader>
-      {/* <Speechmodal/> */}
-      {/* <div><Chatbot
-        config={config}
-        messageParser={MessageParser}
-        actionProvider={ActionProvider}
-      /> </div> */}
       <div > 
         <Textbox>Lorem Ipsum is simply dummsy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Textbox>
         <Textbox>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Textbox>
       </div>
       <form>
       <Styleddiv>
-        <p><textarea cols="48" rows="5">{transcript}</textarea></p>
+        <p><textarea cols="48" rows="5" value="hihi" >{transcript}</textarea></p>
         <Newimg src={listen ? require('./images/onmic.png'): require('./images/blackmic.png')} 
              
         alt="" onClick={()=>{
@@ -126,4 +130,4 @@ const Getstory =(props)=>{
 }; 
 
 
-export default Getstory;
+export default Gettext;

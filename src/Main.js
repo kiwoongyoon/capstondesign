@@ -63,7 +63,7 @@ const Main =(props)=>{
         <Newdiv >    
             
             <h1>오늘 하루 스트레스를 날려보세요</h1>
-            <Link to ="./getstory" style={{ textDecoration: "none" }}>
+            <Link to ="./choose" style={{ textDecoration: "none" }}>
             <Button variant="contained" style={{ textDecoration: "none" }}>Get Started</Button>
             </Link>
             <Link to ="./counselfind" style={{ textDecoration: "none" }}>
