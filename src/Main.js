@@ -51,11 +51,14 @@ const Realfeel = () => {
     );
 }
 
-const Main = () => {
+const Main = (props) => {
     return (
-        <> < Newheader /> {/*<CounselFind/>*/
-        } {/* <Appmap/> */
-        } < Realfeel /> <section class="main-quotes overview darkmode">
+        <>
+            < Newheader />
+            {/*<CounselFind/>*/}
+            {/* <Appmap/> */}
+            < Realfeel />
+            <section class="main-quotes overview darkmode">
             <div class="margin-auto">
                 <h1 class="quote">
                     <span>다람쥐 헌<br/>쳇바퀴에 타고파.</span>
@@ -63,7 +66,13 @@ const Main = () => {
                 <div class="main-actions">
                     <p class="margin-button">
                         <a class="button button_primary" href="/docs/getting-started.html">Get started</a>
-                        <a class="button button_outline" href="#why-kotlin">인근 상담소 확인</a>
+                            <a class="button button_outline" href="#why-kotlin">인근 상담소 확인</a>
+                            <Link to ="./choose" style={{ textDecoration: "none" }}>
+                                <Button variant="contained" style={{ textDecoration: "none" }}>Get Started</Button>
+                            </Link>
+                            <Link to ="./counselfind" style={{ textDecoration: "none" }}>
+            <Button variant="contained" style={{ textDecoration: "none" }}>Find hospital</Button>
+            </Link>
                     </p>
                     <p class="margin-contributor text">
                         <a target="_blank" href="/contributors" class="actions-logo"><img src={require("./images/logo.png")} alt="team logo" width="32" height="32"/></a>
