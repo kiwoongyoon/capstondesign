@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import {Link} from "react-router-dom"
 import Newheader from "./Newheader";
 import axios from 'axios'; 
+import sogang from './images/sogang2.PNG'; 
 import Appmap from "./CounselFind.js";
 const Newdiv =styled.div`
    position: relative ;
@@ -127,6 +128,150 @@ const Main =(props)=>{
             </div>
         </section>
 
+        <section class="p-5 bg-primary">
+            <div class ="container">
+                <h2 class="text-center text-white">고칠 수 있는 것들</h2>
+                <p class = "lead text-center text-white mb-5">
+                    이러한 감정들을 갖고 있으면 사용해보세요
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img 
+                              src=""
+                              class="rounded-circle mb-3"
+                              alt=""/>
+                             <h3 class="card-title mb-3">감정1</h3> 
+                        </div>
+                      </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md">
+                        <h2 class="text-center mb-4">Contact Info
+                        </h2>
+                        <ul class="list-group-flush lead">
+                            <li class="list-group-item">
+                                <span class="fw-bold">Main Location:</span>서강대학교
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">전화번호:</span>010-1234-5678
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">이메일:</span>sodfj@naver.com
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md">
+                        <div id="map">
+                            <img src={sogang} style={{
+                                width: "600px",
+                                height: "400px"
+                            }} alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="p-5 bg-primary text-white text-center position-relative">
+            <div class="container text-center">
+                
+                <p class="lead text-center">Copyright &copy:팀명이 없는 팀</p>
+                
+                <Link to="/"><i class="bi bi-twitter text-dark mx-1"></i></Link>
+                <Link to="/"><i class="bi bi-facebook text-dark mx-1"></i></Link>
+                <Link to="/"><i class="bi bi-linkedin text-dark mx-1"></i></Link>
+                <Link to="/"><i class="bi bi-instagram text-dark mx-1"></i></Link>
+                
+                <div class="position-absolute bottom-0 end-0 p-5">
+                    <i class="bi bi-arrow-up-circle h1"></i>
+                </div>
+            </div>
+
+        </footer>
         </>
     );
 }; 
