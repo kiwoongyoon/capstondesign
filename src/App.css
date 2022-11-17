@@ -143,3 +143,7 @@
   margin: 1rem;
   width: 300px;
 }
+.mainsection{
+  background:url("https://dy7glz37jgl0b.cloudfront.net/betterhelp_two/css-elements/bg-gradient-texture.png"); 
+  background-size: cover;
+}
