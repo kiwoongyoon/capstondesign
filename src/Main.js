@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Newheader from "./Newheader";
+import Newheader from "./Header";
 import axios from "axios";
 import Appmap from "./CounselFind.js";
 import "./main.css";
@@ -52,9 +52,9 @@ const Main = (props) => {
   return (
     <>
       <Newheader />
-      <section class="main-section dark-mode">
-        <div class="margin-auto">
-          <h1 class="quote rainbow-mode">
+      <section className="main-section dark-mode">
+        <div className="margin-auto">
+          <h1 className="quote rainbow-mode">
             <div>
               {
                 {
@@ -116,12 +116,12 @@ const Main = (props) => {
               }
             </div>
           </h1>
-          <div class="main-actions">
-            <p class="margin-button">
+          <div className="main-actions">
+            <p className="margin-button">
               <Link to="./choose" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
-                  class="button button_primary"
+                  className="button button_primary"
                   style={{ textDecoration: "none" }}
                 >
                   Get Started
@@ -130,7 +130,7 @@ const Main = (props) => {
               <Link to="./counselfind" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
-                  class="button button_outline"
+                  className="button button_outline"
                   style={{ textDecoration: "none" }}
                 >
                   인근 상담소 검색
@@ -138,9 +138,9 @@ const Main = (props) => {
               </Link>
             </p>
           </div>
-          <div class="main-actions">
-            <p class="margin-contributor text">
-              <a target="_blank" href="/contributors" class="actions-logo">
+          <div className="main-actions">
+            <p className="margin-contributor text">
+              <a target="_blank" href="/contributors" className="actions-logo">
                 <img
                   src={require("./images/logo.png")}
                   alt="team logo"
@@ -148,9 +148,9 @@ const Main = (props) => {
                   height="32"
                 />
               </a>
-              <span class="kto-text kto-text_size_s">
+              <span className="kto-text kto-text_size_s">
                 Developed by
-                <a target="_blank" href="/contributors" class="link-theme">
+                <a target="_blank" href="/contributors" className="link-theme">
                   팀명이 없는 팀
                 </a>
               </span>
