@@ -7,6 +7,7 @@ import { CiMicrophoneOn } from "react-icons/ci";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import { red } from "@mui/material/colors";
 import { style } from "@mui/system";
 const Styleddiv = styled.div`
@@ -28,7 +29,7 @@ const GetVoice = () => {
   }
 
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
       <form>
         <Styleddiv>
@@ -67,7 +68,8 @@ const GetVoice = () => {
           </Link>
         </Styleddiv>
       </form>
-    </>
+      <Footer />
+    </div>
   );
 };
 export default GetVoice;

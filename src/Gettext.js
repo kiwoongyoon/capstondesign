@@ -8,6 +8,7 @@ import { CiMicrophoneOn } from "react-icons/ci";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import { red } from "@mui/material/colors";
 import { style } from "@mui/system";
 // import Chatbot from "react-chatbot-kit";
@@ -95,7 +96,7 @@ const Gettext = (props) => {
     return <span>Browser doesn't support speech recognition.</span>;
   }
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
       <div>
         <Textbox>
@@ -151,7 +152,8 @@ const Gettext = (props) => {
         </Styleddiv>
       </form>
       {/* <Speechrecog />    */}
-    </>
+      <Footer />
+    </div>
   );
 };
 

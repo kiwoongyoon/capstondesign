@@ -1,6 +1,7 @@
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import React, { useEffect, useState } from "react";
-import Newheader from "./Header";
+import Header from "./Header";
+import Footer from "./Footer";
 import useGeolocation from "./useGeolocation";
 import { json } from "react-router-dom";
 import axios from "axios";
@@ -94,12 +95,13 @@ function Appmap() {
   }, [check]);
 
   return (
-    <div className="App">
-      <Newheader />
+    <div className="App d-flex flex-column min-vh-100">
+      <Header />
       <div>
         <button onClick={setCheck}>new</button>
       </div>
       <div id="map" className="map"></div>
+      <Footer />
     </div>
   );
 }
