@@ -65,15 +65,15 @@ const Main = (props) => {
                 </h1>
                 <div class="main-actions">
                     <p class="margin-button">
-                        <a class="button button_primary" href="/docs/getting-started.html">Get started</a>
-                            <a class="button button_outline" href="#why-kotlin">인근 상담소 확인</a>
-                            <Link to ="./choose" style={{ textDecoration: "none" }}>
-                                <Button variant="contained" style={{ textDecoration: "none" }}>Get Started</Button>
-                            </Link>
-                            <Link to ="./counselfind" style={{ textDecoration: "none" }}>
-            <Button variant="contained" style={{ textDecoration: "none" }}>Find hospital</Button>
-            </Link>
+                        <Link to ="./choose" style={{ textDecoration: "none" }}>
+                            <Button variant="contained" class="button button_primary" style={{ textDecoration: "none" }}>Get Started</Button>
+                        </Link>
+                        <Link to ="./counselfind" style={{ textDecoration: "none" }}>
+                            <Button variant="contained" class="button button_outline" style={{ textDecoration: "none" }}>인근 상담소 검색</Button>
+                        </Link>
                     </p>
+                </div>
+                <div class="main-actions">
                     <p class="margin-contributor text">
                         <a target="_blank" href="/contributors" class="actions-logo"><img src={require("./images/logo.png")} alt="team logo" width="32" height="32"/></a>
                         <span class="kto-text kto-text_size_s">
