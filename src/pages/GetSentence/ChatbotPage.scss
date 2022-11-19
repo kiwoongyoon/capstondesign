@@ -7,7 +7,6 @@ Mixins
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 @mixin ball {
   @include center;
   content: "";
@@ -36,12 +35,11 @@ body {
 }
 
 body {
-  background: linear-gradient(135deg, #044f48, #2a7561);
+  background: linear-gradient(135deg, #acff75, #fffd7f);
   background-size: cover;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 1.3;
-  overflow: hidden;
 }
 
 .bg {
@@ -61,7 +59,7 @@ body {
   --------------------*/
 .chat {
   @include center;
-  width: 300px;
+  width: 120ch;
   height: 80vh;
   max-height: 500px;
   z-index: 2;
@@ -78,26 +76,27 @@ body {
   Chat Title
   --------------------*/
 .chat-title {
-  flex: 0 1 45px;
+  flex: 0 1 50px;
   position: relative;
   z-index: 2;
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   text-transform: uppercase;
   text-align: left;
-  padding: 10px 10px 10px 50px;
+  padding: 10px 10px 10px 60px;
 
   h1,
   h2 {
     font-weight: normal;
-    font-size: 10px;
+    font-size: 15px;
+    padding-top: 3px;
     margin: 0;
-    padding: 0;
   }
 
   h2 {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 8px;
+    font-size: 12px;
+    padding-bottom: 1px;
     letter-spacing: 1px;
   }
 
@@ -107,8 +106,8 @@ body {
     top: 8px;
     left: 9px;
     border-radius: 30px;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -146,9 +145,9 @@ body {
     border-radius: 10px 10px 10px 0;
     background: rgba(0, 0, 0, 0.3);
     margin: 8px 0;
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.4;
-    margin-left: 35px;
+    margin-left: 45px;
     position: relative;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -171,11 +170,11 @@ body {
     .avatar {
       position: absolute;
       z-index: 1;
-      bottom: -15px;
-      left: -35px;
+      bottom: -10px;
+      left: -45px;
       border-radius: 30px;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -247,10 +246,10 @@ body {
   Message Box
   --------------------*/
 .message-box {
-  flex: 0 1 40px;
+  flex: 0 1 80px;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  padding: 15px;
   position: relative;
 
   & .message-input {
@@ -259,11 +258,11 @@ body {
     outline: none !important;
     resize: none;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 11px;
-    height: 17px;
+    font-size: 16px;
+    height: 42px;
     margin: 0;
     padding-right: 20px;
-    width: 265px;
+    width: 512px;
   }
 
   textarea:focus:-webkit-placeholder {
@@ -273,12 +272,12 @@ body {
   & .message-submit {
     position: absolute;
     z-index: 1;
-    top: 9px;
-    right: 10px;
+    top: 25px;
+    right: 20px;
     color: #fff;
     border: none;
     background: #248a52;
-    font-size: 10px;
+    font-size: 20px;
     text-transform: uppercase;
     line-height: 1;
     padding: 6px 10px;
@@ -362,3 +361,13 @@ body {
     transform: translateY(-10px);
   }
 }
+
+/*
+Copyright (c) 2022 by Fabio Ottaviani (https://codepen.io/supah/pen/jqOBqp)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
