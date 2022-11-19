@@ -26,9 +26,9 @@ const Main = (props) => {
       {/*<CounselFind/>*/}
       {/* <Appmap/> */}
       <Emotion />
-      <Stress />
-      <ContactInfo />
-      <SideButton />
+      <Stress height="800" />
+      <ContactInfo height="1300" />
+      <SideButton height="200" />
       <Footer />
     </>
   );

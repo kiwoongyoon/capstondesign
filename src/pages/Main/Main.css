@@ -493,8 +493,22 @@ footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 0.3s;
   z-index: 100;
+}
+
+.transition-smooth {
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.deactivate {
+  opacity: 0.001;
+  transform: scale(0.96) translateY(12px);
+}
+
+.activate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 @font-face {
