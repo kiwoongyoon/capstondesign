@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -24,6 +24,11 @@ const GetVoice = () => {
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
+
+  useEffect(() => {
+    console.log({ transcript });
+  }, [transcript]);
+
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
@@ -34,7 +39,12 @@ const GetVoice = () => {
       <form>
         <Styleddiv>
           <p>
-            <textarea cols="48" rows="5" defaultValue={transcript} />
+            <textarea
+              cols="48"
+              rows="5"
+              placeholder="여기에 문장 출력"
+              value={transcript}
+            />
           </p>
           <Newimg
             src={
@@ -55,7 +65,6 @@ const GetVoice = () => {
               if (listen === true) {
                 SpeechRecognition.stopListening();
                 setListen(false);
-                console.log({ transcript });
               }
             }}
           />
