@@ -510,6 +510,13 @@ footer {
   transform: scale(1) translateY(0);
 }
 
+.analyze-button {
+  position: absolute;
+  top: 80%;
+  left: 44%;
+  z-index: 100;
+}
+
 @font-face {
   font-family: "NanumSquareL";
   src: url("assets/fonts/NanumSquareNeo-bRg.ttf");

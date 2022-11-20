@@ -4,7 +4,7 @@ import Footer from "components/Footer";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-import Kogpt from "./AIChat";
+import Kogpt from "../Chatbot/AIChat";
 const Styleddiv = styled.div`
   margin: 4rem;
 `;

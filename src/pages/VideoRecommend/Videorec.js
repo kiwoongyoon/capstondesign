@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "components/Header";
 import "pages/App/App.css";
-function Videorec() {
+function VideoRec() {
   // 영상을 추천하는 !!!
   const samplevideos = [
     "https://www.youtube.com/watch?v=6rmJb_6Vx18&ab_channel=SNU",
@@ -18,4 +18,4 @@ function Videorec() {
     </div>
   );
 }
-export default Videorec;
+export default VideoRec;

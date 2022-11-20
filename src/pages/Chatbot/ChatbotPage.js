@@ -3,15 +3,24 @@ import { useEffect, useState } from "react";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import AIChat from "./AIChat";
+import SpeechRec from "./SpeechRec";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 import "./ChatbotPage.scss";
 import $ from "jquery";
 import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js";
 import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 require("jquery-mousewheel");
 
-const ChatbotPage = () => {
-  const [AI, setAI] = useState("저는 챗봇입니다. 당신의 고민을 들어드릴게요.");
+function ChatbotPage() {
+  const [AI, setAI] = useState(
+    "안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
+  );
+  const [archive, setArchive] = useState(
+    "안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
+  );
 
+  const [isListen, toggleListen] = useState(false);
   let $messages = $(".messages-content"),
     d,
     h,
@@ -52,12 +61,21 @@ const ChatbotPage = () => {
   }
 
   function InsertMessage() {
+    toggleListen(false);
     let msg = $(".message-input").val();
     if (msg.trim() === "") {
       return false;
     }
-    AIChat({ question: AI, text: msg }).then((res) => {
-      setAI(res);
+    AIChat({ question: archive, text: msg }).then((e) => {
+      let i = 0;
+      if (e[i] === AI) {
+        i += 2;
+        while (e[i] === "") {
+          i += 1;
+        }
+      }
+      setAI(e[i]);
+      setArchive(archive + "\nA:" + msg + "\nQ:" + e[i]);
     });
     $('<div class="message message-personal">' + msg + "</div>")
       .appendTo($(".mCSB_container"))
@@ -70,12 +88,11 @@ const ChatbotPage = () => {
     }, 1000);
   }
 
-  $(window).on("keydown", function(e) {
-    if (e.which === 13) {
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
       InsertMessage();
-      return false;
     }
-  });
+  };
 
   function loadMessage() {
     if ($(".message-input").val() !== "") {
@@ -115,20 +132,30 @@ const ChatbotPage = () => {
           <div class="messages-content mCustomScrollbar _mCS_1"></div>
         </div>
         <div class="message-box">
-          <textarea
-            type="text"
-            class="message-input"
-            placeholder="문장을 입력하세요..."
-          ></textarea>
+          <SpeechRec
+            isListen={isListen}
+            toggleListen={toggleListen}
+            handleKeyPress={handleKeyPress}
+          />
+
           <button type="submit" class="message-submit" onClick={InsertMessage}>
             전송
           </button>
         </div>
       </div>
-      <div class="bg"></div>
+      <div class="bg" />
+      <Link to="../analyze" style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          class="button button_primary analyze-button"
+          style={{ textDecoration: "none" }}
+        >
+          분석하기 >>
+        </Button>
+      </Link>
       <Footer />
     </div>
   );
-};
+}
 
 export default ChatbotPage;

@@ -3,9 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import Quote from "./Quote";
-import Actions from "./Actions";
+import ActionButtons from "./ActionButtons";
 import Features from "./Features";
-import Appmap from "pages/Counsel/CounselFind.js";
 import Emotion from "./Emotion";
 import Stress from "./Stress";
 import ContactInfo from "./ContactInfo";
@@ -18,13 +17,10 @@ const Main = (props) => {
       <section className="main-section dark-mode">
         <div className="margin-auto">
           <Quote />
-          <Actions />
+          <ActionButtons />
           <Features />
         </div>
       </section>
-      {/*<AxiosData />*/}
-      {/*<CounselFind/>*/}
-      {/* <Appmap/> */}
       <Emotion />
       <Stress height="800" />
       <ContactInfo height="1300" />

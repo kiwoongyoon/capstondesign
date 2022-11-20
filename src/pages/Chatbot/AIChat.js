@@ -1,22 +1,30 @@
 import axios from "axios";
 
 const information =
-  "정보: 직업 심리상담사, 말투 친절함, 잘 맞장구쳐줌. 정보를 바탕으로 질문에 답하세요. Q:";
+  "정보: 직업 심리상담사, 말투 친절함\n정보를 바탕으로 질문에 답하세요.\nQ:";
 
-async function AIChat({ question, text }) {
-  return await postData({
-    prompt: information + question + " A:" + text,
+function AIChat({ question, text }) {
+  return postData({
+    prompt: information + question + "\nA:" + text + "\nQ:",
     max_tokens: 100,
-    //temperature: 0.8,
-    //top_p: 0.9,
+    temperature: 0.9,
+    top_p: 0.95,
     n: 1,
-  }).then((e) => {
-    return e.data.generations[0].text;
-  });
+  })
+    .then((e) => {
+      let sentences = e.data.generations[0].text.split("\n");
+      console.log(e);
+      console.log(sentences);
+      return sentences;
+    })
+    .catch(() => {
+      return "죄송합니다. 잠시 후 다시 시도해주세요.";
+    });
 }
 
 let REST_API_KEY = "69d1babac0c9e862fea8b3574fae7bb8";
 async function postData({ prompt, max_tokens, temperature, top_p, n }) {
+  console.log("prompt", prompt);
   try {
     const res = await axios.post(
       "v1/inference/kogpt/generation",
