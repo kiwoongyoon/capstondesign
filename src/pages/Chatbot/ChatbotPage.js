@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import AIChat from "./AIChat";
+import SendNodejs from "./SendNodejs";
 import SpeechRec from "./SpeechRec";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -66,6 +67,7 @@ function ChatbotPage() {
     if (msg.trim() === "") {
       return false;
     }
+    SendNodejs({ text: msg });
     AIChat({ question: archive, text: msg }).then((e) => {
       let i = 0;
       if (e[i] === AI) {
@@ -150,7 +152,7 @@ function ChatbotPage() {
           class="button button_primary analyze-button"
           style={{ textDecoration: "none" }}
         >
-          분석하기 >>
+          결과 분석하기
         </Button>
       </Link>
       <Footer />
