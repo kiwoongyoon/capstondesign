@@ -1,11 +1,11 @@
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-const Actions = () => {
+const ActionButtons = () => {
   return (
     <div className="main-actions">
       <p className="margin-button">
-        <Link to="./choose" style={{ textDecoration: "none" }}>
+        <Link to="./chat" style={{ textDecoration: "none" }}>
           <Button
             variant="contained"
             class="button button_primary"
@@ -14,7 +14,7 @@ const Actions = () => {
             Get Started
           </Button>
         </Link>
-        <Link to="./counselfind" style={{ textDecoration: "none" }}>
+        <Link to="./counsel" style={{ textDecoration: "none" }}>
           <Button
             variant="contained"
             class="button button_outline"
@@ -28,4 +28,4 @@ const Actions = () => {
   );
 };
 
-export default Actions;
+export default ActionButtons;

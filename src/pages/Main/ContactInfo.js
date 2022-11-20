@@ -2,7 +2,7 @@ import Activation from "./Activation";
 
 function ContactInfo({ height }) {
   return (
-    <section className="p-0">
+    <section className="p-1" style={{ backgroundColor: "white" }}>
       <div className="container">
         {Activation({
           height: height,

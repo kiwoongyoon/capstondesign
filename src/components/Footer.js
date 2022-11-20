@@ -119,7 +119,7 @@ M71.433495,31.043894
       </div>
       <div className="text-area">
         <p className="margin-contributor text">
-          <a target="_blank" href="/contributors" className="actions-logo">
+          <a target="_blank" href="/contributor" className="actions-logo">
             <img
               src={require("assets/images/logo.png")}
               alt="team logo"
@@ -129,7 +129,7 @@ M71.433495,31.043894
           </a>
           <span className="text">
             Developed by
-            <a target="_blank" href="/contributors" className="link-theme">
+            <a target="_blank" href="/contributor" className="link-theme">
               팀명이 없는 팀
             </a>
           </span>

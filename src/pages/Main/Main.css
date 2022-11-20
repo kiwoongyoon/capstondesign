@@ -106,7 +106,6 @@ a:focus {
       #b44db0 50.31%,
       #7f52ff 97.03%
     );
-  background-color: #7f52ff;
 }
 
 .dark-mode {
@@ -509,6 +508,13 @@ footer {
 .activate {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+.analyze-button {
+  position: absolute;
+  top: 80%;
+  left: 44%;
+  z-index: 100;
 }
 
 @font-face {
