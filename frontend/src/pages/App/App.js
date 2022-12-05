@@ -4,7 +4,7 @@ import "pages/App/App.css";
 import Main from "pages/Main/Main";
 import ChatbotPage from "pages/Chatbot/ChatbotPage";
 import CounselFind from "pages/Counsel/CounselFind";
-import VideoRec from "pages/VideoRecommend/VideoRec";
+import VideoRec from "pages/VideoRecommend/Videorec";
 import Contributor from "pages/Contributor/Contributor";
 import NotFound from "pages/NotFound/NotFound";
 

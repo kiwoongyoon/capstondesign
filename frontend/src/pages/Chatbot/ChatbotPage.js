@@ -21,6 +21,8 @@ function ChatbotPage() {
     "안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
   );
 
+  const [archive_ans, setArchive_ans] = useState("");
+
   const [isListen, toggleListen] = useState(false);
   let $messages = $(".messages-content"),
     d,
@@ -67,7 +69,6 @@ function ChatbotPage() {
     if (msg.trim() === "") {
       return false;
     }
-    SendNodejs({ text: msg });
     AIChat({ question: archive, text: msg }).then((e) => {
       let i = 0;
       if (e[i] === AI) {
@@ -77,6 +78,14 @@ function ChatbotPage() {
         }
       }
       setAI(e[i]);
+      if (msg.charAt(msg.length-1) === '\n') {
+        msg = msg.slice(0, -1);
+      }
+      let temp = msg.charAt(msg.length - 1);
+      if (temp !== "." && temp !== "?" && temp !== "!") {
+        msg += ".";
+      }
+      setArchive_ans(archive_ans + " " + msg);
       setArchive(archive + "\nA:" + msg + "\nQ:" + e[i]);
     });
     $('<div class="message message-personal">' + msg + "</div>")
@@ -151,6 +160,7 @@ function ChatbotPage() {
           variant="contained"
           class="button button_primary analyze-button"
           style={{ textDecoration: "none" }}
+          onClick={()=>SendNodejs({ text: archive_ans })}
         >
           결과 분석하기
         </Button>
