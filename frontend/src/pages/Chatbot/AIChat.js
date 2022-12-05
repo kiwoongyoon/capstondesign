@@ -27,7 +27,7 @@ async function postData({ prompt, max_tokens, temperature, top_p, n }) {
   console.log("prompt", prompt);
   try {
     const res = await axios.post(
-      "v1/inference/kogpt/generation",
+      "api/SingleText",
       {
         prompt,
         max_tokens,
