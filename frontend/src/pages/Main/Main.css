@@ -517,6 +517,21 @@ footer {
   z-index: 100;
 }
 
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
 @font-face {
   font-family: "NanumSquareL";
   src: url("assets/fonts/NanumSquareNeo-bRg.ttf");

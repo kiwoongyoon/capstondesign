@@ -18,7 +18,7 @@ const Loading = () => {
     return(
         <Background>
             <h2>감정 분석중...</h2>
-            <img src={require("assets/images/spinner_200.gif")} alt="로딩중" width="10%" />
+            <img src={require("assets/images/spinner_200.gif")} alt="로딩중..." width="10%" />
         </Background>
         );
 };
