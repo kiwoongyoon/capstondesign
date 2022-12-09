@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import AIChat from "./AIChat";
+import AIChat from "../deprecated/AIChat";
 import SendNodejs from "./SendNodejs";
 import SpeechRec from "./SpeechRec";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./ChatbotPage.scss";
 import $ from "jquery";
+import OpenAIChat from "./OpenAIChat";
 import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js";
 import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 require("jquery-mousewheel");
@@ -18,7 +19,7 @@ function ChatbotPage() {
     "안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
   );
   const [archive, setArchive] = useState(
-    "안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
+    "AI: 안녕하세요, 서강대학교 심리상담 AI 김서강입니다. 당신의 고민을 들어드릴게요."
   );
 
   const [archive_ans, setArchive_ans] = useState("");
@@ -69,15 +70,9 @@ function ChatbotPage() {
     if (msg.trim() === "") {
       return false;
     }
-    AIChat({ question: archive, text: msg }).then((e) => {
-      let i = 0;
-      if (e[i] === AI) {
-        i += 2;
-        while (e[i] === "") {
-          i += 1;
-        }
-      }
-      setAI(e[i]);
+    console.log(archive+"\n"+msg);
+    OpenAIChat({ question: archive, text: msg }).then((e) => {
+      setAI(e);
       if (msg.charAt(msg.length-1) === '\n') {
         msg = msg.slice(0, -1);
       }
@@ -86,7 +81,7 @@ function ChatbotPage() {
         msg += ".";
       }
       setArchive_ans(archive_ans + " " + msg);
-      setArchive(archive + "\nA:" + msg + "\nQ:" + e[i]);
+      setArchive(archive + "\nHuman: " + msg + "\nAI: " + e);
     });
     $('<div class="message message-personal">' + msg + "</div>")
       .appendTo($(".mCSB_container"))
