@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import AIChat from "../deprecated/AIChat";
-import SendNodejs from "./SendNodejs";
 import SpeechRec from "./SpeechRec";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -143,21 +141,19 @@ function ChatbotPage() {
             toggleListen={toggleListen}
             handleKeyPress={handleKeyPress}
           />
-
           <button type="submit" class="message-submit" onClick={InsertMessage}>
             전송
           </button>
         </div>
       </div>
       <div class="bg" />
-      <Link to="../analyze" style={{ textDecoration: "none" }}>
+      <Link to={{pathname: "../analyze"}} state= {{data: archive_ans}} style={{ textDecoration: "none" }}>
         <Button
           variant="contained"
           class="button button_primary analyze-button"
           style={{ textDecoration: "none" }}
-          onClick={()=>SendNodejs({ text: archive_ans })}
         >
-          결과 분석하기
+          챗봇과 대화 종료하기
         </Button>
       </Link>
       <Footer />
