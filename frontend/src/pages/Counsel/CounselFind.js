@@ -6,12 +6,14 @@ function LandingPage() {
   const [Place, setPlace] = useState('')
 
   const onChange = (e) => {
-    setInputText(e.target.value)
+    // const placeAdded = (e.target.value).concat(' ', '심리상담소'); 
+    const place = e.target.value ; 
+    setInputText(place)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setPlace(InputText)
+    setPlace(InputText.concat(' ', '심리상담소'))
     setInputText('')
   }
 
@@ -23,7 +25,7 @@ function LandingPage() {
         margin: "0px 0px 10px 0px",
 
       }}>
-        <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} 
+        <input placeholder="지역을 입력하세요" onChange={onChange} value={InputText} 
          class="btn btn-primary placeholder col-4 mt-1" 
         />
         <Button class="btn btn-primary mt-1" type="submit">검색</Button>
