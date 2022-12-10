@@ -29,7 +29,7 @@ jobs:
         run: yarn install
 
       - name: Build page
-        run: yarn build
+        run: CI='' yarn build
 
   test:
     name: Test on Server
