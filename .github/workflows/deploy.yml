@@ -54,5 +54,5 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run Server
-        run: npm run dev & npx wait-on http://localhost:5001
+      # - name: Run Server
+      # run: npm run dev & npx wait-on http://localhost:5001
