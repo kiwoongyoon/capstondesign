@@ -38,8 +38,8 @@ jobs:
     env:
       YOUTUBE: ${{ secrets.YOUTUBE_API_KEY }}
     defaults:
-    run:
-      working-directory: "./backend"
+      run:
+        working-directory: "./backend"
 
     steps:
       - name: Checkout source code
