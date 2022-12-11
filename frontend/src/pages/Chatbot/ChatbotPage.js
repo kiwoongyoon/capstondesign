@@ -147,7 +147,7 @@ function ChatbotPage() {
         </div>
       </div>
       <div class="bg" />
-      <Link to={{pathname: "../analyze"}} state= {{data: archive_ans}} style={{ textDecoration: "none" }}>
+      {archive_ans.length>=30? <Link to={{pathname: "../analyze"}} state= {{data: archive_ans}} style={{ textDecoration: "none" }}>
         <Button
           variant="contained"
           class="button button_primary analyze-button"
@@ -155,7 +155,13 @@ function ChatbotPage() {
         >
           챗봇과 대화 종료하기
         </Button>
-      </Link>
+      </Link> : <Button
+          variant="contained"
+          class="button button_secondary analyze-button"
+          style={{ textDecoration: "none" }}
+        >
+          분석 전 30자 이상 입력해주세요
+        </Button>}
       <Footer />
     </div>
   );

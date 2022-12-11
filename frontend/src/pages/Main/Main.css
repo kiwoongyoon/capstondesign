@@ -273,6 +273,15 @@ h6 {
   background: #5830c6;
 }
 
+.button_secondary {
+  color: #fff;
+  background: #979797;
+}
+
+.button_secondary:hover {
+  background: #5c5c5c;
+}
+
 .button_outline {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
