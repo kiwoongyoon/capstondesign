@@ -13,8 +13,8 @@ function LandingPage() {
   const[check, setCheck] = useState(0) ; 
   const[state, setState] = useState({
     center: {
-      lat: 37.5455,
-      lng: 126.927,
+      lat: 35.1595,
+      lng: 126.852,
     },
     errMsg: null,
     isLoading: true,
@@ -55,7 +55,8 @@ const findLatlng =()=>{
       }
     )
    
-  } else {
+  }
+   else {
     // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
     setState((prev) => ({
      ...prev,
@@ -70,21 +71,30 @@ const latToAddress=(userState)=>{
   var callback = function(result, status){
     if(status===kakao.maps.services.Status.OK){
       setAddress(result[0].address.region_2depth_name); 
-      console.log(Address) ; 
+      // console.log(result[0]); 
+      // console.log(Address) ; 
       
     }
   }
   geocoder.coord2Address(coord.getLng(),coord.getLat(),callback);
+  return Address; 
 }
 
    async function getLat(){
      var userState = await findLatlng();//비동기로 실행하고 그 이후에 주소 반환하기 
-     latToAddress(userState) ;
+     var userGu = await latToAddress(userState) ;
+    //  console.log(Address); 
+    //  console.log(userGu); 
      setPlace(Address.concat('', '심리상담소'))
    }
+
+  // useEffect(()=>{
+  //   getLat(); 
+  // }, []); 
+
   useEffect(()=>{
     getLat(); 
-  },[check]); 
+  },[Address, check]); 
   
 
 
