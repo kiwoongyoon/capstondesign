@@ -3,6 +3,7 @@ import MapContainer from "pages/Counsel/mapContainer";
 import Button from "@mui/material/Button";
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import SideButton from 'pages/Main/SideButton';
 
 const { kakao } = window
 function LandingPage() {
@@ -119,6 +120,7 @@ const latToAddress=(userState)=>{
       </form>
 
       <MapContainer searchPlace={Place} />
+      <SideButton height="200" />
       <Footer />
     </div>
   )
