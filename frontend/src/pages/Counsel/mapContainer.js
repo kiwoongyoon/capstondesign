@@ -85,18 +85,26 @@ const MapContainer = ({ searchPlace }) => {
     <div>
       <div
         id="myMap"
-        class="mt-3"
+        class="mt-0"
         style={{
           width: '100%',
-          height: '450px',
+          height: '700px',
         }}
         
       ></div>
       <div class="container d-grid">
         {Places.map((item, i) => (
-          <div class="bg-primary card text-danger"  key={i} style={{ marginTop: '20px' }}>
+          <div class = "container row g-2 ">
+            
+          <div class="bg-muted card "  
+          
+          key={i} style={{ 
+            marginTop: '20px' ,
+            color: '#DF6033'
+
+          }}>
             <span>{i + 1}</span>
-            <div >
+            <div  >
               <h5 >{item.place_name}</h5>
               {item.road_address_name ? (
                 <div>
@@ -108,6 +116,7 @@ const MapContainer = ({ searchPlace }) => {
               )}
               <span>{item.phone}</span>
             </div>
+          </div>
           </div>
         ))}
          <div id="pagination"></div> 
