@@ -51,7 +51,7 @@ const MapContainer = ({ searchPlace }) => {
       for (i = 1; i <= pagination.last; i++) {
         var el = document.createElement('a')
         el.href = '#'
-        el.innerHTML = i
+        el.innerHTML = ''
 
         if (i === pagination.current) {
           el.className = 'on'
@@ -81,6 +81,8 @@ const MapContainer = ({ searchPlace }) => {
     }
   }, [searchPlace])
 
+
+
   return (
     <div>
       <div
@@ -92,20 +94,34 @@ const MapContainer = ({ searchPlace }) => {
         }}
         
       ></div>
-      <div class="container d-grid">
+      <div class="container d-grid"
+         
+      >
         {Places.map((item, i) => (
           <div class = "container row g-2 ">
-            
-          <div class="bg-muted card "  
-          
+          <div class="bg-muted card" 
+          // onClick={handleOnclick()} 
           key={i} style={{ 
             marginTop: '20px' ,
             color: '#DF6033'
-
           }}>
             <span>{i + 1}</span>
             <div  >
-              <h5 >{item.place_name}</h5>
+              <h5
+              style={{
+                color: '#DF6033',
+                appearance:' none',
+                outline: 'none'
+              }}
+              ><button 
+              style={{
+                color: '#DF6033',
+                appearance:' none',
+                outline: 'none',
+                border: 'none', 
+                backgroundColor: 'transparent'
+              }}
+              onClick={()=>window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${item.place_name}`, '_blank')}>{item.place_name}</button></h5>
               {item.road_address_name ? (
                 <div>
                   <span >{item.road_address_name}</span>

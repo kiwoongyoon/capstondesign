@@ -72,8 +72,7 @@ const latToAddress=(userState)=>{
   var callback = function(result, status){
     if(status===kakao.maps.services.Status.OK){
       setAddress(result[0].address.region_2depth_name); 
-      // console.log(result[0]); 
-      // console.log(Address) ; 
+     
       
     }
   }
@@ -81,17 +80,25 @@ const latToAddress=(userState)=>{
   return Address; 
 }
 
+  
+
+
+
+
+
    async function getLat(){
      var userState = await findLatlng();//비동기로 실행하고 그 이후에 주소 반환하기 
      var userGu = await latToAddress(userState) ;
-    //  console.log(Address); 
-    //  console.log(userGu); 
+    
      setPlace(Address.concat('', '심리상담소'))
    }
 
-  // useEffect(()=>{
-  //   getLat(); 
-  // }, []); 
+
+
+
+
+
+
 
   useEffect(()=>{
     getLat(); 
@@ -121,7 +128,10 @@ const latToAddress=(userState)=>{
 
       <MapContainer searchPlace={Place} />
       <SideButton height="200" />
-      <Footer />
+      <Footer 
+     style={{ 
+      marginTop: '200px' ,
+    }}/>
     </div>
   )
 }
