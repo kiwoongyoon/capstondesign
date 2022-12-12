@@ -118,13 +118,14 @@ function response(res:any, text:any){
 				}else if(word === "슬픔" || word === "불안"){
 					word += "을 극복";
 				}else if(word === "상처"){
-					word += "를 치유";
+					word += "를 위로";
 				}else if(word === "당황"){
 					word += " 대처";
 				}
 				var limit = 10;  // 출력 갯수
-				youtube.addParam('order', 'rating'); // 평점 순으로 정렬
+				youtube.addParam('order', 'viewCount'); // 평점 순으로 정렬
 				youtube.addParam('type', 'video');   // 타입 지정
+
 				//// 검색 옵션 끝
 				youtube.search(word, limit, function (err:any, result:any) { // 검색 실행
 					if (err) { console.log(err); return; } // 에러일 경우 에러공지하고 빠져나감
@@ -137,9 +138,9 @@ function response(res:any, text:any){
 						var title = it["snippet"]["title"];
 						var video_id = it["id"]["videoId"];
 						var url = "https://www.youtube.com/watch?v=" + video_id;
-						//console.log("제목 : " + title);
-						//console.log("URL : " + url);
-						//console.log("-----------");
+						console.log("제목 : " + title);
+						console.log("URL : " + url);
+						console.log("-----------");
 					}
 					let res_: any = {
 						"emotion" : PARSED,
@@ -167,7 +168,7 @@ app.post("/api/emotion", async (req,res)=>{
 	//res.status(200).json({success: true})
 	
 	var done = false;
-	let resp = await response(res,text[0]);
+	let resp:any = await response(res,text[0]);
 	return resp;
 	//var word = (resp as any)?.label; // 검색어 지정
 	//console.log(word);

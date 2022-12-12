@@ -12,7 +12,7 @@ export default async function OpenAIChat({ question, text }) {
         model: "text-davinci-003",
         prompt: "The following is a conversation with an AI psychological counselor. The assistant is kind, clever, and very friendly.\n\n"+question+"Human: "+text+"\nAI: ",
         temperature: 0.9,
-        max_tokens: 300,
+        max_tokens: 500,
         top_p: 1,
         frequency_penalty: 0.0,
         presence_penalty: 0.6,

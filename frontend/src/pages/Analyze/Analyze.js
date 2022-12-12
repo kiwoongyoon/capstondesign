@@ -55,7 +55,7 @@ const Analyze = () => {
             <div>
                 <h1><br/>당신의 기분에 어울리는 컨텐츠를 준비해보았어요.</h1><br/>
             </div>
-            {(emote === "상처" || emote === "슬픔") && score >= 0.9 ?
+            {(emote === "상처" || emote === "슬픔" || emote === "불안" || emote === "분노") && score >= 0.9 ?
             <button
                 onClick={()=>window.open('./counsel', '_blank')}
                 class="button button_primary"
@@ -65,8 +65,8 @@ const Analyze = () => {
             </button>:null}
             <div class="videoWrapper">
                 {yt.map((item, index) => (
-                <iframe src={`https://www.youtube.com/embed/${item}?controls=0&autoplay=1&autoplay=1&loop=1&playlist=${item}`}
-                    allow="fullscreen"
+                <iframe src={`https://www.youtube.com/embed/${item}?controls=1&fullscreen=1&autoplay=${(index===0?1:0)}&loop=${(index===0?1:0)}&modestbranding=1&playlist=${item}`}
+                    allow="fullscreen; controls; autoplay; loop; modestbranding; playlist;"
                     title={"감정 분석 영상 "+index}>
                 </iframe>
                 ))}
