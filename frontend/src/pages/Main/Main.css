@@ -537,13 +537,46 @@ footer {
   margin-top:50px;
 }
 .videoWrapper iframe {
-  /* position: absolute;
-  top: 0;
-  margin-left: auto;
-  margin-right: auto;*/
   width: 90%;
   height: 160%; 
   box-sizing: border-box;
+}
+
+.mg {
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.message-search {
+  color: #fff;
+  border: none;
+  background: #2dac49;
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 10px;
+  outline: none !important;
+  transition: background 0.2s ease;
+}
+
+.message-search:hover {
+  background: #1d7745;
+}
+
+.message-gps {
+  color: #fff;
+  border: none;
+  background: #24838a;
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 10px;
+  outline: none !important;
+  transition: background 0.2s ease;
+}
+
+.message-gps:hover {
+  background: #1d5b77;
 }
 
 @font-face {

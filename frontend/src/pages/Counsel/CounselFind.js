@@ -98,15 +98,14 @@ const latToAddress=(userState)=>{
         margin: "0px 0px 0px 0px",
       }}>
         <input placeholder="지역을 입력해주세요(ex: 신촌)" required onChange={onChange} value={InputText} 
-         class="btn btn-secondary placeholder col-4 mt-3" 
+         class="btn btn-secondary placeholder col-4 mt-3 mg" 
          style={{
             cursor: "text",
             
          }}
         />
-        <br/>
-        <Button class="btn btn-primary mt-3" type="submit">검색</Button>
-        <Button class="btn btn-primary mt-3" onClick={()=>{setCheck(check+1)}}>주변 상담소 찾기</Button>
+        <Button class="mg message-search" type="submit">검색</Button>
+        <Button class="mg message-gps" onClick={()=>{setCheck(check+1)}}>주변 상담소 찾기</Button>
       </form>
 
       <MapContainer searchPlace={Place} />

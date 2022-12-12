@@ -12,7 +12,7 @@ function SideButton({ height }) {
         onClick={MoveTop}
       >
         <img
-          src={require("assets/images/logo.png")}
+          src={require("assets/images/top.png")}
           alt="Top"
           style={{ width: "50px", height: "50px" }}
         />

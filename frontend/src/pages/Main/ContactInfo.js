@@ -26,20 +26,13 @@ function ContactInfo({ height }) {
                 </div>
               </div>
               <div className="col-md pt-lg-5 inform-text">
-                <h2 className="text-center mb-4">Contact Info</h2>
+                <h2 className="text-center mb-4"><br/>Contact Info</h2>
                 <ul className="list-group-flush lead">
                   <li className="list-group-item">
                     <span className="fw-bold">Team Name: </span>팀명이 없는 팀
                   </li>
                   <li className="list-group-item">
                     <span className="fw-bold">Main Location: </span>서강대학교
-                  </li>
-                  <li className="list-group-item">
-                    <span className="fw-bold">Call: </span>010-1234-5678
-                  </li>
-                  <li className="list-group-item">
-                    <span className="fw-bold">E-Mail: </span>
-                    nonamedteam@google.com
                   </li>
                 </ul>
               </div>

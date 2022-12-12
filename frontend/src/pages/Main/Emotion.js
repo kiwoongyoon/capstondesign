@@ -35,7 +35,7 @@ const Emotion = () => {
             <div className="card bg-light">
               <div className="card-body text-center">
                 <img src="" className="rounded-circle mb-3" alt="" />
-                <h3 className="card-title mb-3">낙담</h3>
+                <h3 className="card-title mb-3">상처</h3>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Emotion = () => {
             <div className="card bg-light">
               <div className="card-body text-center">
                 <img src="" className="rounded-circle mb-3" alt="" />
-                <h3 className="card-title mb-3">당혹감</h3>
+                <h3 className="card-title mb-3">당혹</h3>
               </div>
             </div>
           </div>

@@ -103,7 +103,7 @@ function ChatbotPage() {
       return false;
     }
     $(
-      '<div class="message loading new"><figure class="avatar"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" /></figure><span></span></div>'
+      '<div class="message loading new"><figure class="avatar"><img src='+ require("assets/images/og.jpg") +' /></figure><span></span></div>'
     ).appendTo($(".mCSB_container"));
     updateScrollbar();
   }
@@ -111,7 +111,7 @@ function ChatbotPage() {
   function newMessage() {
     $(".message.loading").remove();
     $(
-      '<div class="message new"><figure class="avatar"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" /></figure>' +
+      '<div class="message new"><figure class="avatar"><img src='+ require("assets/images/og.jpg") +' /></figure>' +
         AI +
         "</div>"
     )
