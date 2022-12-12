@@ -1,6 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import MapContainer from "pages/Counsel/mapContainer";
 import Button from "@mui/material/Button";
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+
 const { kakao } = window
 function LandingPage() {
   var geocoder = new kakao.maps.services.Geocoder();
@@ -88,8 +91,8 @@ const latToAddress=(userState)=>{
 
   /////////////////
   return (
-    <>
-      {/* //////////////기존의 지도 */}
+    <div class="d-flex flex-column min-vh-100">
+      <Header />
       <form className="inputForm" onSubmit={handleSubmit}   
       style={{
         margin: "0px 0px 0px 0px",
@@ -101,12 +104,14 @@ const latToAddress=(userState)=>{
             
          }}
         />
+        <br/>
         <Button class="btn btn-primary mt-3" type="submit">검색</Button>
         <Button class="btn btn-primary mt-3" onClick={()=>{setCheck(check+1)}}>주변 상담소 찾기</Button>
       </form>
 
       <MapContainer searchPlace={Place} />
-    </>
+      <Footer />
+    </div>
   )
 }
 
